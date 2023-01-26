@@ -19,30 +19,92 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
+#Developed by:SAKTHIVEL R
+#RegisterNumber: 22009121
 
-
-
+def linearSearch(array,n,k):
+    for i in range (0,n):
+        if (array[i] == k):
+            return i
+    return -1
+    
+array = eval(input())
+k = eval(input()) 
+n=len(array)
+array.sort()
+result = linearSearch(array,n,k)
+if(result==-1):
+    print(array)
+    print ('Element not found')
+else:
+    print(array)
+    print ("Element found at index: ",result)
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
+#Developed by: SAKTHIVEL R
+#RegisterNumber: 22009121
 
-
-
-
-
+def binarySearchIter(array, k, low, high):
+    while low<=high:
+        mid=low+(high-low//2)
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input())
+result = binarySearchIter(array,k,0,len(array)-1)
+if (result == -1):
+    print (array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
+#Developed by: SAKTHIVEL R
+#RegisterNumber: 22009121
 
-
-
-
-
+def BinarySearch(arr, k, low, high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:
+        return -1
+    
+     
+arr = eval(input())
+arr.sort()
+k = eval(input()) 
+result= BinarySearch(arr,k,0,len(arr)-1)
+if (result==-1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ",result)
 ```
 ## Sample Input and Output
+1)
+![Screenshot from 2023-01-26 17-59-15](https://user-images.githubusercontent.com/120550359/214836050-540b7f7a-1126-4f11-9f09-286b6915bef8.png)
 
+2)
+![Screenshot from 2023-01-26 17-59-28](https://user-images.githubusercontent.com/120550359/214836161-b1db0413-eb67-4ebd-b39c-094147ffc84d.png)
 
+3)
 
+![Screenshot from 2023-01-26 17-59-45](https://user-images.githubusercontent.com/120550359/214836242-9583807f-02cb-40ff-a23b-33ebb9e83b5b.png)
 
 
 
